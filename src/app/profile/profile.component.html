@@ -1,0 +1,87 @@
+ <div class="container mt-3 ">
+  <!-- <div style="padding: 20px; width: 28rem;"> -->
+    
+<!-- <div class="row" style="margin-top: 40px;">
+    <div class="col-lg-4"> -->
+      
+      <!-- <div class="card">
+        <div class="card-body" style="background-color: #e15f41; padding: 0px; padding-left: 10px; color: wheat;"> -->
+          <fieldset class="border rounded-3 p-5" style="align-content: center; background-color:#1E90FF;">
+          <h2><strong><u>Welcome  {{user.nameOnCard}}</u></strong></h2>
+        <!-- </div> -->
+        <fieldset class="border rounded-3 p-3" style="align-content: center;">
+        <ul class="list-group list-group-flush" *ngIf="user.username || user.nameOnCard || user.cardNumber">
+          <label><h5><strong>Name On Card :</strong></h5></label>
+          <li class="list-group-item">{{user.nameOnCard}}</li>
+          <label><h5><strong>Email :</strong></h5></label>
+          <li class="list-group-item">{{user.username}}</li>
+          <label><h5><strong>Address :</strong></h5></label>
+          <li class="list-group-item">{{user.address}}</li>
+        </ul>
+        <div *ngIf="user.admin==true">
+          <label><h4><strong>Categories</strong> </h4></label>
+          <ul class="list-group" *ngFor="let cat of categories">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <span style="cursor: pointer;" [routerLink]="['/profile/' + user.id + '/categories/', cat.id]"
+                routerLinkActive="router-link-active"> {{cat.name}} </span>
+              <button type="button" class="btn btn-outline-primary btn-sm"  (click)="addProduct(cat.id)">Add   product</button>
+            </li>
+          </ul>
+        </div>
+        <br>
+  
+        <div class="card-body">
+          <button type="button" class="btn btn-danger" (click)="logout(user.id)">Logout</button>
+          <button type="button" class="btn btn-warning" style="margin: 0 10px;"
+            (click)="updateProfile(user.id)">Update</button>
+          <button type="button" class="btn btn-info"  (click)="addCategory(user.id)" *ngIf="user.admin">Add
+            category</button>
+          <!-- <button type="button" class="btn btn-success" routerLink="/addTag" (click)="addTag()" style="margin-left: 10px;"
+            *ngIf="user.admin">Add tag</button>      throw lot of error -->
+        </div>
+      <!-- </div> -->
+  
+    <!-- </div> -->
+    <div class="col-lg-12">
+      <div class="card" *ngIf="cartLength>=1" style="margin-top: 30px;">
+        <div class="card-body">
+          <mat-accordion>
+            <mat-expansion-panel hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Your product
+                </mat-panel-title>
+                <mat-panel-description>
+                  This is a product saved
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <!-- <th scope="col">Delete</th> -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let cart of carts">
+                    <th scope="row"><img src="{{cart.pictureUrl}}" class="img-thumbnail" style="width: 100px;"></th>
+                    <td>{{cart.name}}</td>
+                    <td>{{cart.price}}</td>
+                    <td>{{cart.quantity}}</td>
+                    <!-- <td><span class="material-icons" (click)="deleteCart(cart.id, user.id)"
+                        style="cursor: pointer; color: #e15f41;">delete_forever</span></td>           may be  -->
+                  </tr>
+                </tbody>
+              </table>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  <!-- </div> -->
+  <br>
+  <br>

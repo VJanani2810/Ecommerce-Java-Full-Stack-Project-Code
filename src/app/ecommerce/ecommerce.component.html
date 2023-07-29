@@ -1,0 +1,252 @@
+<!-- <div class="container" [hidden]="orderFinished">
+  <div class="row"> 
+    https://images-eu.ssl-images-amazon.com/images/G/31/img22/Electronics/BAU/Page/Revamp/RTB/Section/Revised/RTB_PC.jpg    you have to use-->
+<nav class="navbar navbar-expand-sm navbar-light  bg-primary " [hidden]="orderFinished">
+  <div class="container ">
+    <a class="navbar-brand text-light " href="#!"> &nbsp; &nbsp; Welcome to A2Z Eccommerce</a>
+   <img src="/assets/Picture1.png" style="max-width:7cm; height:2cm;">
+    <div class="col-lg-8">
+      <div class="input-group mb-3" style="margin-top: 15px;">
+        <input type="text" class="form-control" placeholder="Search product" name="name" [(ngModel)]="name">
+        <button class="btn btn-danger" type="button" (click)="search()"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+  </div>
+  <div class="collapse navbar-collapse" id="navbarCustom">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li>
+        <a class="navbar-brand text-light " aria-expanded="false" aria-current="page"
+          [routerLink]="['/dashboard']">Home</a>
+      </li>
+      <li>
+        <a class="navbar-brand text-light " aria-expanded="false" aria-current="page" *ngIf="user"
+          [routerLink]="['/profile/', user.id]"> Profile
+          <i class="fas fa-user"></i>
+        </a>
+      </li>
+      <li>
+        <div>
+          <button type="button" class="btn btn-outline-light" routerLink="/login" *ngIf="!user">Login</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- </div>
+</div>  -->
+<hr>
+<app-shopping-cart (onOrderFinished)=finishOrder($event) #shoppingCartC [hidden]="orderFinished" >
+</app-shopping-cart>
+<br>
+<br>
+<div class="container">
+<div id="carouselExampleControlBig" class="carousel slide" data-bs-ride="carousel">
+	<div class="carousel-inner">
+	  <div class="carousel-item active">
+		<img src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/AF/PD/eventpage/stealdeals/V1/Bags-Trolleys-Wallets_3000x1000._CB601148309_.gif" routerLink="/deals"    class="d-block w-100" alt="...">
+	  </div>
+	  <div class="carousel-item">
+		<img src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/AF/PD/eventpage/stealdeals/V1/Clothing-Shoes-more_3000x1000._CB601148309_.gif" routerLink="/deals"  class="d-block w-100" alt="...">
+	  </div>
+	  <div class="carousel-item">
+		<img src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/AF/PD/eventpage/stealdeals/V1/Luxury-Brands-Designer-more_3000x1000._CB601148309_.gif"  routerLink="/deals"  class="d-block w-100" alt="...">
+	  </div>
+      <div class="carousel-item">
+		<img src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/AF/PD/eventpage/stealdeals/V1/Watches-Smartwatches_3000x1000._CB601148308_.gif" routerLink="/deals"  class="d-block w-100" alt="...">
+	  </div>
+      <div class="carousel-item">
+		<img src="https://m.media-amazon.com/images/G/31/img21/OHL/PD23/platinumbrands/HINDWARE-PC._CB600006343_.jpg" class="d-block w-100" routerLink="/deals"  alt="...">
+	  </div>
+	</div>
+	<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlBig" data-bs-slide="prev">
+	  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	  <span class="visually-hidden">Previous</span>
+	</button>
+	<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlBig" data-bs-slide="next">
+	  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+	  <span class="visually-hidden">Next</span>
+	</button>
+  </div>
+  </div>
+  <br>
+  <hr>
+<div class="page-wrapper">
+	<div class="container">
+		<div class="row">
+      		<div class="col-md-4">
+		<a href="http://localhost:4200/sangle/product/5">	<img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/IN/OHL/GW/Fallback/creatives/Desktop_CC_1x._SY304_CB588818660_.jpg" alt="mixes">
+     </a> 		</div>
+			<div class="col-md-4">
+            <a href="http://localhost:4200/sangle/product/6">    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Electronics/Clearance/Clearance_store_Desktop_CC_1x._SY304_CB628315133_.jpg" alt="laptop">
+      		</a></div>
+              <div class="col-md-4">
+             <a href="http://localhost:4200/sangle/product/7">   <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG23/TVs/Sabeer/MAY_BVD/Desktop_CC._SY304_CB589278387_.jpg" alt="Appliances">
+                </a>  </div>
+		</div>
+	</div>
+</div>
+<br>
+<!-- <div class="row" style="padding-bottom: 40px;"> -->
+<div class="container" *ngIf="!showSearch">
+  <!-- <div class="col-md-12"> -->
+  <app-products #productsC [hidden]="orderFinished"></app-products>
+</div>
+<!-- <div class="col-md-3">
+    <app-shopping-cart (onOrderFinished)=finishOrder($event) #shoppingCartC [hidden]="orderFinished">
+    </app-shopping-cart>
+  </div> -->
+
+<div class="col-md-6 offset-3">
+  <app-orders #ordersC [hidden]="!orderFinished"></app-orders>
+</div>
+<!-- </div> -->
+
+<div *ngIf="showSearch">
+  <div class="card-deck" style="padding-bottom: 40px;">
+    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of products let i = index;">
+      <div class="card text-center">
+        <div class="card-header" style="background-color: #bdc3c7;">
+          <h4>{{product.name}}</h4>
+        </div>
+
+        <div class="card-body">
+          <a (click)="sngleProduct(product.id)"><img class="card-img-top img-thumbnail"
+              style="width: 230px; height: 300px; cursor: pointer;" src={{product.pictureUrl}} alt="image"></a>
+          <h5 class="card-title" id="price">Price = {{product.price}}<i class="fas fa-dollar-sign"></i>
+            <button title="Information" id="btn" (click)=showUndoBtn(i) (click)="productInfo(product.id)">
+              <i class="fas fa-info-circle"></i></button>
+            <button title="View" id="btn" (click)="sngleProduct(product.id)"> <i class="fas fa-eye-slash"></i></button>
+          </h5>
+          <div class="modal" [attr.id]="'undoBtn'+i" *ngIf="showBtn===i && showMyContainerInfo" class="editBtn"
+            md-raised-button color="primary">
+            <div class="modal-content">
+              <span>{{product.description}}</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="text-center text-lg-start text-white bg-primary text-muted">
+  <!-- Section: Social media -->
+  <!-- // <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"> -->
+
+  <section class="d-flex justify-content-lg-between p-4 border-bottom">
+    <!-- Right -->
+    <div class="container text-center">
+      <a href="" class="me-4 text-reset text-white">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 text-white">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Get To Know As
+          </h6>
+          <a style="text-decoration:none" href="" routerLink="/aboutUs" class="text-reset">About Us</a><br>
+          <a style="text-decoration:none" href="#!" routerLink="/contactUs" class="text-reset">Contact Us</a><br>
+          <a style="text-decoration:none" href="#!" routerLink="/FAQ" class="text-reset">FAQ</a><br>
+
+        </div>
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-2">
+          <div class="text-white">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              CONSUMER POLICY
+            </h6>
+
+            <a style="text-decoration:none" href="#!" routerLink="/returnPolicy" class="text-reset">Return Policy</a>
+            <br>
+            <a style="text-decoration:none" href="#!" routerLink="/termsOfUse" class="text-reset">Terms Of Use</a><br>
+            <a style="text-decoration:none" href="#!" routerLink="/security" class="text-reset">Security</a><br>
+            <!-- <a style="text-decoration:none"  href="#!" class="text-reset">Privacy</a> -->
+          </div>
+        </div>
+        <!-- Grid column -->
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <div class="text-white">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              SOCIAL
+            </h6>
+            <a style="text-decoration:none" href="https://www.facebook.com/flipkart" class="text-reset">FaceBook</a><br>
+            <a style="text-decoration:none" href="https://twitter.com/" class="text-reset">Twitter</a><br>
+            <a style="text-decoration:none" href="https://www.youtube.com/flipkart" class="text-reset">YouTube</a><br>
+            <a style="text-decoration:none" href="https://www.instagram.com/amazondotin/"
+              class="text-reset">Instagram</a>
+          </div>
+        </div>
+        <!-- Grid column -->
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-white">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Mail Us</h6>
+
+          <p>A2Zecommerce@a2z.com<br>
+            A2Z Internet Private Limited,<br>
+            Bengaluru, 560103,<br>
+            Karnataka, India</p>
+        </div>
+        <!-- Grid column -->
+
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-white">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Registered Office Address</h6>
+          <p>A2B Internet Private Limited,
+            Buildings Alyssa, Begonia &
+            Clove Embassy Tech Village,
+            Outer Ring Road, Devarabeesanahalli Village,
+            Bengaluru, 560103,
+            Karnataka, India
+            CIN : U51109KA2012PTC066107
+            Telephone: 044-45614700</p>
+        </div>
+      </div>
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4 text-white" style="background-color: rgba(0, 0, 0, 0.05);">
+
+    <a style="text-decoration:none" class="text-reset fw-bold" href="https://mdbootstrap.com/">© Copyright 1996-2023,
+      A2Z.com, Inc. or its affiliates</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->

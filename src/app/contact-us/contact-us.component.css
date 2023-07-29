@@ -1,0 +1,31 @@
+.banner {
+    align-self: center;
+    background-color:darkslategrey;
+    width: 34cm;
+    padding: 2em 0;
+  }
+  .container{
+    align-content: center;
+  }
+  .row {
+    align-items: center;
+  }
+  .social-card-header{
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 96px;
+}
+.social-card-header i {
+    font-size: 32px;
+    color:#FFF;
+}
+
+.share:hover {
+        text-decoration: none;
+    opacity: 0.8;
+}

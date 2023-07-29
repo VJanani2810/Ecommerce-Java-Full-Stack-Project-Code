@@ -1,0 +1,133 @@
+<style>
+  body {
+    font-family: initial;
+    font-size: 16px;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  a {
+    margin-right: 20px;
+    color: aliceblue;
+  }
+
+  .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo {
+    height: 40px;
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo:hover {
+    opacity: 0.8;
+  }
+
+  .fa-shopping-cart {
+    font-size: 50px;
+    margin: 10px;
+  }
+</style> 
+<!-- 
+<div class="toolbar" role="banner">
+  <i class="fas fa-shopping-cart"></i>
+  <span [routerLink]="['/dashboard']">Welcome to your eccommerce</span>
+  <!-- <button mat-button [matMenuTriggerFor]="menu">Menu <i class="fas fa-caret-down"></i></button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item *ngFor="let cat of categories"
+      [routerLink]="['/dsiplay-category/', cat.id]">{{cat.name}}</button>
+  </mat-menu>
+
+  <div class="spacer"></div>
+  <a type="button" [routerLink]="['/dashboard']">
+    Home <i class="fas fa-home"></i>
+  </a>
+  <a type="button" *ngIf="user" [routerLink]="['/profile/', user.id]">
+    Profile <i class="fas fa-user"></i>
+  </a>
+  <a type="button" (click)="login()" *ngIf="!user">
+    login
+  </a>
+</div><br>
+
+<router-outlet></router-outlet>  -->
+
+<!-- <nav class="navbar navbar-expand-sm navbar-light  bg-primary ">
+  <div class="container ">
+    <a class="navbar-brand text-light " href="#!"> &nbsp; &nbsp; A2Z Eccommerce</a> 
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+        class="navbar-toggler-icon"></span></button>  
+
+        <div class="col-lg-6">
+          <div class="input-group mb-3" style="margin-top: 15px;">
+            <input type="text" class="form-control" placeholder="Search product" name="name" [(ngModel)]="name">
+            <button class="btn btn-danger" type="button" (click)="search()"><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+        </div>
+
+
+        <div class="collapse navbar-collapse" id="navbarCustom">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li>
+              <a class="navbar-brand text-light " aria-expanded="false" aria-current="page" [routerLink]="['/dashboard']">Home</a>
+              </li>
+              <li>
+                <a class="navbar-brand text-light " aria-expanded="false" aria-current="page" *ngIf="user" [routerLink]="['/profile/', user.id]"> Profile 
+                  <i class="fas fa-user"></i>
+                </a>
+            </li>
+            <li>
+              <div>
+                <button type="button" class="btn btn-outline-light" routerLink="/login" *ngIf="!user">Login</button>
+              </div>
+              </li>
+              </ul>
+              </div>
+        </nav> 
+       
+<hr>
+
+        <!-- <div *ngIf="showSearch">
+          <div class="card-deck" style="padding-bottom: 40px;">
+            <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of products let i = index;">
+              <div class="card text-center">
+                <div class="card-header" style="background-color: #bdc3c7;">
+                  <h4>{{product.name}}</h4>
+                </div>
+        
+                <div class="card-body">
+                  <a (click)="sngleProduct(product.id)"><img class="card-img-top img-thumbnail"
+                      style="width: 230px; height: 300px; cursor: pointer;" src={{product.pictureUrl}} alt="image"></a>
+                  <h5 class="card-title" id="price">Price = {{product.price}}<i class="fas fa-dollar-sign"></i>
+                    <button title="Information" id="btn" (click)=showUndoBtn(i) (click)="productInfo(product.id)">
+                      <i class="fas fa-info-circle"></i></button>
+                    <button title="View" id="btn" (click)="sngleProduct(product.id)"> <i class="fas fa-eye-slash"></i></button>
+                  </h5>
+                  <div class="modal" [attr.id]="'undoBtn'+i" *ngIf="showBtn===i && showMyContainerInfo" class="editBtn"
+                    md-raised-button color="primary">
+                    <div class="modal-content">
+                      <span>{{product.description}}</span>
+                    </div>
+                  </div> -->
+
+
+                  <router-outlet></router-outlet>
+                

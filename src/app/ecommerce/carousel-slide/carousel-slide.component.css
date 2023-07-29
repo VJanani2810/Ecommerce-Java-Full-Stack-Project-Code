@@ -1,0 +1,9 @@
+.carousel-control-prev, .carousel-control-next{
+    background: #000;
+    width: 40px!important;
+    height: 40px!important;
+    border-radius: 50px;
+    top: 50%!important;
+    margin-top: -20px;
+  }
+  

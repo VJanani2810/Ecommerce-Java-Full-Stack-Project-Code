@@ -1,0 +1,106 @@
+<nav class="navbar navbar-expand-sm navbar-light  bg-primary " >
+    <div class="container ">
+      <a class="navbar-brand text-light " href="#!"> A2Z Eccommerce</a>
+     
+      <div class="col-lg-8">
+        <div class="input-group mb-3" style="margin-top: 15px;">
+          <input type="text" class="form-control" placeholder="Search product" name="name">
+          <button class="btn btn-danger" type="button" ><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarCustom">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li>
+          <a class="navbar-brand text-light " aria-expanded="false" aria-current="page"
+            [routerLink]="['/dashboard']">Home</a>
+        </li>
+        <li>
+          <!-- <a class="navbar-brand text-light " aria-expanded="false" aria-current="page" 
+            [routerLink]="['/profile/']"> Profile
+            <i class="fas fa-user"></i>
+          </a> -->
+        </li>
+        <li>
+          <div>
+            <button type="button" class="btn btn-outline-light" routerLink="/login" >Login</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav><br>
+<br>
+
+<div class="container">
+    <section>
+        <h3 class="text-center mb-4 pb-2 text-primary fw-bold">FAQ</h3>
+        <p class="text-center mb-5">
+            Find the answers for the most frequently asked questions below
+        </p>
+
+        <div class="row">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <h6 class="mb-3 text-primary"><i class="far fa-paper-plane text-primary pe-2"></i>How do I know my order
+                    has been confirmed ?</h6>
+                <p>
+                    <strong><u>Absolutely!</u></strong> An e-mail & SMS will be sent once you've successfully placed
+                    your order. We'll also let you know as soon as the seller ships the item(s) to you along with the
+                    tracking number(s) for your shipment(s). You can track your orders from the 'My Orders' section on
+                    your A2Z account.
+                </p>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <h6 class="mb-3 text-primary"><i class="fas fa-pen-alt text-primary pe-2"></i> The delivery of my order
+                    is delayed. What should I do ?</h6>
+                <p>
+                    <strong><u>Yes, it is possible!</u></strong> On the rare occasion that your order is delayed, please
+                    check your email & messages for updates. A new delivery timeframe will be shared with you and you
+                    can also track its status by visiting My Orders.
+                </p>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <h6 class="mb-3 text-primary"><i class="fas fa-user text-primary pe-2"></i> A simple
+                    question?
+                </h6>
+                <p>
+                    Currently, we only offer monthly subscription. You can upgrade or cancel your monthly
+                    account at any time with no further obligation.
+                </p>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <h6 class="mb-3 text-primary"><i class="fas fa-rocket text-primary pe-2"></i> Why do I see different
+                    prices for the same product ? </h6>
+                <p>
+                    You could see different prices for the same product, as it could be listed by many Sellers.
+                </p>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <h6 class="mb-3 text-primary"><i class="fas fa-home text-primary pe-2"></i> Is installation offered for
+                    all products ?
+                </h6>
+                <p><strong>Unfortunately No.</strong>Installation and demo are offered for certain items by sellers
+                    through the brand or an authorised service provider. Please check the individual product page to see
+                    if these services are offered for the item.</p>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <h6 class="mb-3 text-primary"><i class="fas fa-book-open text-primary pe-2"></i> Another
+                    question that is longer than usual</h6>
+                <p>
+                    Of course! We’re happy to offer a free plan to anyone who wants to try our service.
+                </p>
+            </div>
+        </div>
+    </section>
+</div>
+<footer class="text-center text-lg-start text-white bg-primary text-muted">
+    <div class="text-center p-4 text-white" style="background-color: rgba(0, 0, 0, 0.05);">
+
+        <a style="text-decoration:none" class="text-reset fw-bold" href="">© Copyright
+            1996-2023, A2Z.com, Inc. or its affiliates</a>
+    </div>
+</footer>
